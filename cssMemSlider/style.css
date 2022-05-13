@@ -4,11 +4,11 @@
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 1.25rem;
 }
 
 .slider {
-  max-width: 700px;
+  max-width: 43.75rem;
   overflow: hidden;
   outline: 1px solid black;
 }
@@ -17,7 +17,7 @@
   display: flex;
   transform: translateX(0px);
   height: 100%;
-  height: 400px;
+  height: 25rem;
   transition: all .3s;
 }
 
@@ -27,26 +27,27 @@
 
 .slide img {
   width: 100%;
-  height: 400px;
+  height: 25rem;
 }
 
 .slide__text {
-  padding-left: 20px;
+  padding-left: 1.25rem;
 }
 
 .pointer-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 1.25rem;
 }
 
 .pointer {
   display: flex;
 }
+
 .point {
-  width: 25px;
-  height: 25px;
+  width: 1.5625rem;
+  height: 1.5625rem;
   justify-content: center;
   align-items: center;
   display: flex;
@@ -54,17 +55,63 @@
   padding-left: 5px;
 }
 
-.point div { 
+.point:hover div {
+  background: rgb(198, 198, 198);
+  outline: 1px solid rgb(255, 55, 0);
+}
+
+.point div {
   position: relative;
   z-index: -1;
   background: rgb(255, 55, 0);
-  width: 10px;
-  height: 10px;
+  width: 0.625rem;
+  height: 0.625rem;
   border-radius: 50%;
   transition: all .3s;
 }
 
-.point--active div{
+.point--active div {
   background: none;
-  outline: 2px solid rgb(255, 55, 0);
+  outline: 1px solid rgb(255, 55, 0);
+}
+.point--active:hover div {
+  background: none;
+  outline: 1px solid rgb(255, 55, 0);
+}
+
+
+.text-mems {
+  display: flex;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 0.9em;
+  overflow: hidden;
+}
+
+.wrapper-text {
+  display: flex;
+  transition: all .3s;
+}
+
+@media screen and (max-width: 500px) {
+  .slide-wrapper {
+    height: 250px;
+  }
+
+  .slide img {
+    height: 15.625rem;
+  }
+
+  .pointer-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-flow: wrap-reverse;
+  }
+
+  .pointer {
+    order: 1;
+  }
+
 }
