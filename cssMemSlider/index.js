@@ -14,9 +14,11 @@ class Slider {
 
 
   init() {
-    this.initSizes();
-    this.pointHandler();
-    this.hendlerResize();
+    window.addEventListener('load', () => {
+      this.initSizes();
+      this.pointHandler();
+      this.hendlerResize();
+    })
   }
 
   initSizes() {
@@ -47,12 +49,12 @@ class Slider {
 
   hendlerResize() {
     window.addEventListener('resize', (event) => {
-      if(this.timer) return;
+      if (this.timer) return;
       this.timer = setTimeout(() => {
         this.initSizes();
         this.timer = null
       }, 300);
-     })
+    })
   }
 
 }
